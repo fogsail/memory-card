@@ -15,7 +15,7 @@
 body{
     min-height: 100vh;
     margin: 0 auto;
-    background-image: url(../images/avengers/thanos-bg2.jpg);
+    background-image: url(../images/avengers/background2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -104,7 +104,7 @@ body{
     backface-visibility: hidden;
 }
 .front{
-    background-image: url(../images/avengers/logoblue1.jpg);
+    background-image: url(../images/avengers/logoAvengers.jpg);
     background-size: cover;
     background-position: center;
     
@@ -123,7 +123,7 @@ body{
     background: transparent !important;
 }
 .match .front, .match .back, .card.match {
-    background: rgb(1, 1, 1, 1) url(../images/avengers/logoblue1.png) no-repeat center cover;
+    background: rgb(1, 1, 1, 1) url(../images/avengers/logoAvengers.jpg) no-repeat center cover;
     opacity: 0.5;
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
