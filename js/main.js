@@ -12,6 +12,9 @@ const cardsArr = [
 // icon:
 let closeIcon = document.querySelector(".close");
 
+// stars:
+const stars = document.querySelectorAll(".fa-star");
+
 // moveCounter:
 let moves = 0;
 let movesCounter = document.querySelector(".moves");
@@ -36,6 +39,19 @@ function startTimer() {
     }, 1000);
 }
 
+// init style:
+function initStyle() {
+    document.querySelector(".scorePannel").style.color = "rgb(255, 215, 0)";
+    document.querySelector(".scorePannel").style.fontFamily = "'GALACTIC VANGUARDIAN NCV'";
+    document.querySelector(".scorePannel").style.fontSize = "24px";
+
+    // reset rating
+    for (var i= 0; i < stars.length; i++){
+        stars[i].style.color = "#FFD700";
+        stars[i].style.visibility = "visible";
+    }
+}
+
 
 // create Avengers' cards
 const game = document.getElementById("game");
@@ -47,6 +63,8 @@ game.appendChild(grid);
 let gameGrid = cardsArr.concat(cardsArr);
 
 function startGame(){
+    cleanGrid();
+    initStyle();
     gameGrid.sort(() => 0.5 - Math.random());
 
     gameGrid.forEach(function(elem) {
@@ -77,6 +95,7 @@ function startGame(){
         clearInterval(interval);
     });
 };
+
 startGame();
 /*start game finished!*/
 
@@ -105,8 +124,11 @@ const congratulations = function() {
         finalTime = timer.innerHTML;
         modal.classList.add("show");
 
+        var starRating = document.querySelector(".stars").innerHTML;
+
         document.getElementById("finalMove").innerHTML = moves/2;
         document.getElementById("totalTime").innerHTML = finalTime;
+        document.getElementById("starRating").innerHTML = starRating;
 
         closeWindow();
     }
@@ -154,6 +176,10 @@ grid.addEventListener("click", function(event) {
         hour = 0;
         startTimer();
     }
+
+    // judge the status of the rating, using start count
+    countStars();
+
     if(moves % 2 === 0) movesCounter.innerHTML = moves/2;
     console.log("we moves" + moves);
     // moves/2 is the data we need!
@@ -183,6 +209,23 @@ grid.addEventListener("click", function(event) {
     }
 });
 
+// stars collapse!
+function countStars() {
+    if(moves/2 > 10 && moves/2 < 15) {
+        for(var i = 0; i < 3; i++) {
+            if(i > 1) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    } else if (moves/2 >= 17) {
+        for(var i = 0; i < 3; i++) {
+            if(i > 0) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+}
+
 
 function cleanGrid() {
     while(grid.lastChild) {
@@ -190,6 +233,7 @@ function cleanGrid() {
     }
     console.log("Grid has been clear!");
     moves = 0;
+    // starRating = 3;
     timer.innerHTML = "0 分 0 秒";
     movesCounter.innerHTML = moves/2;
 }
@@ -198,7 +242,7 @@ function cleanGrid() {
 // use $('.grid').empty() to clean
 function closeWindow() {
     closeIcon.addEventListener("click", function(evt) {
-        cleanGrid();
+        // cleanGrid();
         modal.classList.remove("show");
         console.log("removing X");
 
@@ -207,7 +251,7 @@ function closeWindow() {
 }
 
 function playAgain() {
-    cleanGrid();
+    // cleanGrid();
     modal.classList.remove("show");
     console.log("removing through botton");
 

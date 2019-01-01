@@ -217,4 +217,29 @@ test.style.color = "#fff"
 test.style.fontFamily = "'GALACTIC VANGUARDIAN NCV'"
 */
 
+/*
+stars!
+*/
+
+.stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+.stars li {
+    list-style: none;
+    display: inline-block;
+}
+.fa-star {
+    color: #FFD700;
+}
+
+/*refresh*/
+.refresh {
+    float: none;
+    cursor: pointer;
+}
+
+
 

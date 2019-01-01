@@ -13,7 +13,14 @@
     
     <div class="title">
         <h1>AVENGERS: Endgame</h1><hr>
-        <p><span class="moves">0</span> 步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="timer">0</span> </p><hr>
+        <div class="scorePannel"><span class="moves">0</span> &nbsp;步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="timer">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="stars">
+            <li><i class="fa-star">★</i></li>
+            <li><i class="fa-star">★</i></li>
+            <li><i class="fa-star">★</i></li>
+        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="refresh" onclick=startGame()>↺</span>
+    </div><hr>
     </div>       
     <div id="game"></div>
 
@@ -27,9 +34,10 @@
             <div class="content-2">
                 <p>你走了 <span id=finalMove> </span> 步 </p>
                 <p>用了 <span id=totalTime> </span> </p>
+                <p>你获得了 <span id=starRating></span> </p>
             </div>
             <button id="play-again" onclick="playAgain()">
-                Play again </a>
+                Play again 
             </button>
         </div>
     </div>
