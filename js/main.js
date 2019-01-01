@@ -9,6 +9,30 @@ const cardsArr = [
     {'name':'rocket', 'img':'images/avengers/rocket.jpg' }
 ];
 
+// moveCounter:
+let moves = 0;
+let movesCounter = document.querySelector(".moves");
+
+// timer:
+let second = 0, minute = 0, hour = 0;
+let timer = document.querySelector(".timer");
+let interval;
+
+function startTimer() {
+    interval = setInterval(function() {
+        timer.innerHTML = minute+" 分 "+second+" 秒";
+        second++;
+        if(second === 60) {
+            minute++;
+            second = 0;
+        }
+        if(minute === 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000);
+}
+
 
 // create Avengers' cards
 const game = document.getElementById("game");
@@ -44,6 +68,10 @@ function startGame(){
         grid.appendChild(cards);
         cards.appendChild(front);
         cards.appendChild(back);
+
+        var timer = document.querySelector(".timer");
+        timer.innerHTML = "0 mins 0 secs";
+        clearInterval(interval);
     });
 };
 startGame();
@@ -56,12 +84,19 @@ let secondGuess = "";
 let previousTarget = null;
 let delay = 1200;
 let matchedCard = document.getElementsByClassName("match");
-let modal = document.getElementById("win-window");
+let modal = document.getElementById("popup1");
 console.log(modal);
 
+
+// check congratulations
 const congratulations = function() {
     if(matchedCard.length === 16) {
+        clearInterval(interval);
+        finalTime = timer.innerHTML;
         modal.classList.add("show");
+
+        document.getElementById("finalMove").innerHTML = moves/2;
+        document.getElementById("totalTime").innerHTML = finalTime;
     }
 }
 
@@ -99,6 +134,17 @@ grid.addEventListener("click", function(event) {
         return;
     }
     // if we clicked the clicked card, return
+    
+    moves++;
+    if(moves === 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+    if(moves % 2 === 0) movesCounter.innerHTML = moves/2;
+    console.log("we moves" + moves);
+    // moves/2 is the data we need!
 
     if(count < 2) {
         count++;
@@ -124,5 +170,4 @@ grid.addEventListener("click", function(event) {
         previousTarget = clicked;
     }
 });
-
 
