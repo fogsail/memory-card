@@ -17,14 +17,14 @@ git clone https://github.com/fogsail/memory-card.git
 
 ### 1、全局变量:
 
-``sh
+```
 let moves = 0;
 let movesCounter = document.querySelector(".moves");
 // timer:
 let second = 0, minute = 0, hour = 0;
 let timer = document.querySelector(".timer");
 let interval;
-``
+```
 
 用来记录走的步数和所花费的时间，用来评价玩家的最终成绩。
 其中startTimer()用来设置当前时间，而步数的变化我们通过监听鼠标点击这个事件来进行move++，确定最终步数。
@@ -45,29 +45,29 @@ let interval;
 **这两者的处理方法可以统一起来**
 **通过class类的变化，来判断。**
 如果匹配，就在card上
-``sh
+```
 card.classList.add("match");
-``
+```
 
 这样如果匹配过的就多了一个match标签，最后统计match标签数达到16，游戏结束
 
 同理，判断第一次click和第二次click是否为同一张卡片？
 也是用**class marker!**
 通过class标签来判断
-``sh
+```
 select card and set class mark
 if is the same
 	match two card
 else 
 	clean the class mark
-``
+```
 
 具体的实现方式参见
-``sh
+```
 grid.addEventListener("click", function(event) {
 	//
 });
-``
+```
 
 
 ### 4、最后处理一些重新玩的细节就可以了
