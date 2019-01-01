@@ -9,6 +9,9 @@ const cardsArr = [
     {'name':'rocket', 'img':'images/avengers/rocket.jpg' }
 ];
 
+// icon:
+let closeIcon = document.querySelector(".close");
+
 // moveCounter:
 let moves = 0;
 let movesCounter = document.querySelector(".moves");
@@ -70,7 +73,7 @@ function startGame(){
         cards.appendChild(back);
 
         var timer = document.querySelector(".timer");
-        timer.innerHTML = "0 mins 0 secs";
+        timer.innerHTML = "0 分 0 秒";
         clearInterval(interval);
     });
 };
@@ -97,6 +100,8 @@ const congratulations = function() {
 
         document.getElementById("finalMove").innerHTML = moves/2;
         document.getElementById("totalTime").innerHTML = finalTime;
+
+        closeWindow();
     }
 }
 
@@ -170,4 +175,35 @@ grid.addEventListener("click", function(event) {
         previousTarget = clicked;
     }
 });
+
+
+function cleanGrid() {
+    while(grid.lastChild) {
+        grid.removeChild(grid.lastChild);
+    }
+    console.log("Grid has been clear!");
+    moves = 0;
+    timer.innerHTML = "0 分 0 秒";
+    movesCounter.innerHTML = moves/2;
+}
+
+// use close icon to close the win-window
+// use $('.grid').empty() to clean
+function closeWindow() {
+    closeIcon.addEventListener("click", function(evt) {
+        cleanGrid();
+        modal.classList.remove("show");
+        console.log("removing X");
+
+        startGame();
+    });
+}
+
+function playAgain() {
+    cleanGrid();
+    modal.classList.remove("show");
+    console.log("removing through botton");
+
+    startGame();
+}
 
