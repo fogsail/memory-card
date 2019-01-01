@@ -59,77 +59,70 @@ let matchedCard = document.getElementsByClassName("match");
 let modal = document.getElementById("win-window");
 console.log(modal);
 
-// ADD CLASS WHEN MATCH
-const match = () => {
-    
+const congratulations = function() {
+    if(matchedCard.length === 16) {
+        modal.classList.add("show");
+    }
+}
+
+// changed status when matched!
+const match = function() {
     const selected = document.querySelectorAll(".selected");
-    selected.forEach(card => {
+    selected.forEach(function(card) {
         card.classList.add("match");   
-    }   
-);
+    });
 
     console.log(matchedCard.length);  
     
-    function congratulations(){
-    if (matchedCard.length == 30){
-        // show congratulations modal
-        modal.classList.add("show");
-            };
-        };
     congratulations();
     
 }
 
-const resetGuesses = () => {
+const resetGuesses = function() {
     firstGuess = "";
     secondGuess = "";
     count = 0;
     previousTarget = null;
 
     var selected = document.querySelectorAll(".selected");
-    selected.forEach(card => {
+    selected.forEach(function(card) {
         card.classList.remove("selected");
     });
 };
+
 //add class after click
-grid.addEventListener("click", event =>{
+grid.addEventListener("click", function(event) {
     const clicked = event.target;
-    if (
-        clicked.nodeName === "SECTION" || 
-        clicked === previousTarget || clicked.parentNode.classList.contains("selected") ||
-        clicked.parentNode.classList.contains("match")
-    ){
+    if(clicked.nodeName === "SECTION" || clicked === previousTarget
+        || clicked.parentNode.classList.contains("selected")
+        || clicked.parentNode.classList.contains("match")) {
         return;
-    };
-    
-    if (count < 2){
-    count++;
-    if(count === 1){
-        firstGuess = clicked.parentNode.dataset.name;
-        console.log(firstGuess);
-        clicked.parentNode.classList.add("selected");
-    } else {
-        secondGuess = clicked.parentNode.dataset.name;
-        console.log(secondGuess);
-        clicked.parentNode.classList.add("selected");
     }
-    if (firstGuess && secondGuess ){
-        if (firstGuess === secondGuess){
-            setTimeout( match, delay);
+    // if we clicked the clicked card, return
+
+    if(count < 2) {
+        count++;
+        // 1 is for the firstGuess
+        // 2 is for the secondGuess
+
+        if(count === 1) {
+            firstGuess = clicked.parentNode.dataset.name;
+            console.log(firstGuess);
+            clicked.parentNode.classList.add("selected");
+        } else {
+            secondGuess = clicked.parentNode.dataset.name;
+            console.log(secondGuess);
+            clicked.parentNode.classList.add("selected");
         }
+
+        if(firstGuess && secondGuess) {
+            if(firstGuess === secondGuess) {
+                setTimeout(match, delay);
+            }
             setTimeout(resetGuesses, delay);
-        
         }
         previousTarget = clicked;
     }
-    
-}
-);
+});
 
-// PLAY AGAIN
-function playAgain(){
-    $('.grid').empty();
-    modal.classList.remove("show");
-    
-    startGame();
-}
+
