@@ -151,18 +151,20 @@ body{
 .popup {
     margin: 70px auto;
     padding: 20px;
-    background: #ffffff;
+    background: #rgba(255,255,255,0.73);
     border-radius: 5px;
     width: 85%;
     position: relative;
     transition: all 5s ease-in-out;
     font-family: 'Gloria Hallelujah', cursive;
 }
-  
+
+
 .popup h2 {
+    text-align: center;
     margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
+    color: #fff;
+    font-family: 'GALACTIC VANGUARDIAN NCV', cursive;
 }
 
 .popup .close {
@@ -173,7 +175,7 @@ body{
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: #fff;
 }
 
 .popup .close:hover {
@@ -203,10 +205,16 @@ body{
     display: block;
     margin: 0 auto;
     width: 50%;
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'GALACTIC VANGUARDIAN NCV', cursive;
     color: #ffffff;
     border-radius: 5px;
 }
 
+/*
+in js:
+test.style.color = "#fff"
+"#fff"
+test.style.fontFamily = "'GALACTIC VANGUARDIAN NCV'"
+*/
 
 

@@ -92,6 +92,13 @@ console.log(modal);
 
 
 // check congratulations
+// first initial style:
+document.querySelector(".content-1").style.color = "#fff";
+document.querySelector(".content-1").style.fontFamily = "'GALACTIC VANGUARDIAN NCV'";
+document.querySelector(".content-2").style.color = "#fff";
+document.querySelector(".content-2").style.fontFamily = "'GALACTIC VANGUARDIAN NCV'";
+
+
 const congratulations = function() {
     if(matchedCard.length === 16) {
         clearInterval(interval);
