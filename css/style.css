@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "AVENGEANCE HEROIC AVENGER BI";
+    src: url(../fonts/AVENGEANCE\ HEROIC\ AVENGER\ BI.otf);
+}
+@font-face{
+    font-family: "GALACTIC VANGUARDIAN NCV";
+    src: url(../fonts/GALACTIC\ VANGUARDIAN\ NCV.ttf);
+}
+body{
+    min-height: 100vh;
+    margin: 0 auto;
+    background-image: url(../images/avengers/thanos-bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.title{
+    margin: 0 auto 20px 5%;
+    top: 20px;
+    position: relative;
+    max-width: 900px;
+    max-height: 23vh;
+    color: white;
+    font-family: "AVENGEANCE HEROIC AVENGER BI";
+    text-align: center;
+}
+
+.title h1, .title p, hr{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.title h1{
+    font-size: 6em;
+    height: 120px;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(248,211,70);
+    background: linear-gradient(to bottom, rgba(153,67,17,1) 0%, rgba(153,67,17,1) 1%, rgba(219,188,76,1) 68%, rgba(248,211,70,1) 99%, rgb(248, 230, 70) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title hr{
+    background-color: rgba(248,211,70); height: 1px; border: 0; 
+}
+
+.title p{
+    height: 35px;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 5px;
+    font-family: "GALACTIC\ VANGUARDIAN\ NCV";
+    color: rgba(248,211,70);
+}
+
+
+/*Win window style*/
+
+
+#popup1 .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+  
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.73);
+    border-radius: 5px;
+    width: 85%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+  
+.popup h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #E5F720;
+}
+
+.popup .content-1,
+.content-2 {
+    max-height: 30%;
+    overflow: auto;
+    text-align: center;
+}
+.content-1 {
+    font-family: GALACTIC VANGUARDIAN NCV
+}
+.content-2 {
+    font-family: GALACTIC VANGUARDIAN NCV
+}
+
+.show {
+    visibility: visible !important;
+    opacity: 100 !important;
+}
+
+#starRating li {
+    display: inline-block;
+}
+
+#play-again {
+    background-color: #141214;
+    padding: 0.7rem 1rem;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-family: 'GALACTIC VANGUARDIAN NCV', cursive;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+
+/*Win window style finished*/
+
+
+
+
+
+
+
+
+
+
