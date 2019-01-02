@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1120px) {
+@media screen and (max-width: 1120px) {
     /* For tablets: */
     .title{
         margin: 0 auto;
@@ -31,7 +31,7 @@
     
 }
 
-@media only screen and (max-width: 567px) {
+@media screen and (max-width: 567px) {
     body{
         background-size: auto;
         background-position: 70% 40%;
@@ -80,7 +80,7 @@
     }
 }
 
-@media only screen and (max-width: 508px) {
+@media screen and (max-width: 508px) {
     body{
         background-size: auto;
         background-position: 70% 40%;
@@ -129,7 +129,7 @@
     }
 }
 
-@media only screen and (max-width: 457px) {
+@media screen and (max-width: 457px) {
     /* For mobile phones: */
     body{
         background-size: auto;
@@ -179,7 +179,7 @@
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media screen and (max-width: 350px) {
     /* For mobile phones: */
     body{
         background-size: auto;
