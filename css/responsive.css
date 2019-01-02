@@ -179,7 +179,7 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 350px) {
     /* For mobile phones: */
     body{
         background-size: auto;
@@ -204,7 +204,7 @@
     }
     .card, .back, .front{
         height: 94px;
-        width: 85px;
+        width: 75px;
         border-radius: 3px;
         margin: 2px;
     }
